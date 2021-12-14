@@ -32,7 +32,7 @@ export default function SignUp() {
           </Button>
           <LastNote
             text="Already have an account?"
-            link="login.html"
+            link="/login"
             ButtnTxt="Login"
           />
         </Form>

@@ -1,23 +1,28 @@
 import "./styles/App.css";
 
-// import Home from "./pages/HomeContent/Home";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import { AuthProvider } from "../Contexts/AuthContext";
+import Home from "./pages/HomeContent/Home";
 import Layout from "./Layout/Layout";
+import LogIn from "./pages/AccessPoint/LogIn";
+import Quiz from "./pages/QuizPages/Quiz";
 import Result from "./pages/ResultPage/Result";
-
-// import Quiz from "./pages/QuizPages/Quiz";
-
-// import LogIn from "./pages/AccessPoint/LogIn";
-
-// import SignUp from "./pages/AccessPoint/SignUp";
+import SignUp from "./pages/AccessPoint/SignUp";
 
 function App() {
   return (
     <Layout>
-      {/* <Home /> */}
-      {/* <SignUp /> */}
-      {/* <LogIn /> */}
-      {/* <Quiz /> */}
-      <Result />
+      <AuthProvider>
+        <Routes>
+          <Route path="/*" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/result" element={<Result />} />
+        </Routes>
+      </AuthProvider>
     </Layout>
   );
 }

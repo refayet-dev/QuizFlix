@@ -24,7 +24,7 @@ export default function LogIn() {
           </Button>
           <LastNote
             text="Don't have an account? "
-            link="signup.html"
+            link="/signup"
             ButtnTxt="SignUp"
           />
         </Form>

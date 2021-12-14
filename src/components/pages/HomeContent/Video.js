@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../styles/video.module.css";
+import classes from "../../styles/HomePageCSS/video.module.css";
 import img from "../../assets/images/3.jpg";
 
 export default function Video() {
