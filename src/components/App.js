@@ -1,8 +1,8 @@
 import "./styles/App.css";
 
 import { Navigate, Route, Routes } from "react-router-dom";
+import { PrivateRoute, PublicRoute } from "../Routes/Routes";
 
-import { AuthProvider } from "../Contexts/AuthContext";
 import Home from "./pages/HomeContent/Home";
 import Layout from "./Layout/Layout";
 import LogIn from "./pages/AccessPoint/LogIn";
@@ -13,16 +13,42 @@ import SignUp from "./pages/AccessPoint/SignUp";
 function App() {
   return (
     <Layout>
-      <AuthProvider>
-        <Routes>
-          <Route path="/*" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/result" element={<Result />} />
-        </Routes>
-      </AuthProvider>
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute>
+              <SignUp />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <LogIn />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/quiz/:id"
+          element={
+            <PrivateRoute>
+              <Quiz />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/result/:id"
+          element={
+            <PrivateRoute>
+              <Result />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
     </Layout>
   );
 }

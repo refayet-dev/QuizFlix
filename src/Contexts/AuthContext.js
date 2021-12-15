@@ -13,7 +13,7 @@ import {
 const AuthContext = React.createContext();
 
 export function useAuth() {
-  useContext(AuthContext);
+  return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
@@ -26,38 +26,43 @@ export function AuthProvider({ children }) {
       setCurrentUser(user);
       setLoading(false);
     });
+
     return unsubscribe;
   }, []);
 
-  //signUp function
-  async function signUp(email, password, username) {
+  // signup function
+  async function signup(email, password, username) {
     const auth = getAuth();
     await createUserWithEmailAndPassword(auth, email, password);
-    //update profile
-    updateProfile(auth.currentUser, { displayName: username });
+
+    // update profile
+    await updateProfile(auth.currentUser, {
+      displayName: username,
+    });
+
     const user = auth.currentUser;
     setCurrentUser({
       ...user,
     });
   }
 
-  //loginFunction
-
+  // login function
   function login(email, password) {
     const auth = getAuth();
     return signInWithEmailAndPassword(auth, email, password);
   }
 
-  //logOut function
-  function logOut() {
+  // logout function
+  function logout() {
     const auth = getAuth();
     return signOut(auth);
   }
+
   const value = {
     currentUser,
-    signUp,
+    signup,
     login,
-    logOut,
+    logout,
   };
 
   return (
