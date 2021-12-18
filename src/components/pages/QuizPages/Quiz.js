@@ -1,6 +1,6 @@
 import { getDatabase, ref, set } from "firebase/database";
 import { useEffect, useReducer, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import Answer from "./Answer";
 import MiniPlayer from "./MiniPlayer";
@@ -42,6 +42,10 @@ export default function Quiz() {
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
   let navigate = useNavigate();
+
+  //for get videotitle
+  const location = useLocation();
+  const { state } = location;
 
   useEffect(() => {
     dispatch({
@@ -108,7 +112,7 @@ export default function Quiz() {
             progress={progress}
             submit={submit}
           />
-          <MiniPlayer />
+          <MiniPlayer id={id} title={state} />
         </>
       )}
     </>
