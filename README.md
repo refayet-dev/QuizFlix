@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+𝐐𝐮𝐢𝐳𝐅𝐥𝐢𝐱 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+𝐕𝐢𝐝𝐞𝐨 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 & 𝐐𝐮𝐢𝐳 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦
 
-In the project directory, you can run:
+Overview
+This project is a React and Firebase-based web application where users can watch educational videos, ask questions, and take quizzes to test their understanding. At the end of the quiz, users receive a performance report based on their answers.
+Here some Screetshoot of projects workFlow-
+![image](https://github.com/user-attachments/assets/e54990c1-773c-473d-9fc0-7182349d6764)
+![image](https://github.com/user-attachments/assets/7d3ac288-a1b1-4deb-978a-876c530366af)
+![image](https://github.com/user-attachments/assets/77f3faf1-899f-40fc-a00d-0ed5f2f36aab)
+![image](https://github.com/user-attachments/assets/48abe696-571f-4c00-b3d1-8156bf1417ec)
 
-### `yarn start`
+![image](https://github.com/user-attachments/assets/839e22f0-2cd2-485f-acd6-7852b1636d9b)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The demostration of the project is here-
+(https://github.com/user-attachments/assets/ed0dc3f9-2abf-415b-99de-9f737f45f63c)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Features
+- User Authentication: Login and sign-up functionality using Firebase Authentication.
+- Video Streaming: Users can watch different types of videos related to learning topics.
+- Interactive Q&A: Users can ask questions related to the videos.
+- Quiz System: Each video has an associated quiz for users to test their knowledge.
+- Performance Report: After completing the quiz, users receive a report detailing their performance.
+- Responsive UI: Optimized for different screen sizes.
 
-### `yarn eject`
+Tech Stack
+- Frontend: React.js (Hooks, Context API)
+- Backend & Database: Firebase (Firestore, Authentication, Hosting)
+- Deployment: Firebase Hosting
+- State Management: Context API
+- Styling: CSS 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Installation
+1. Clone the repository:
+   ```sh
+   git clone [https://github.com/refayet-dev/QuizFlix.git]
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd QuizFlix
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Create a `.env` file and add Firebase configuration:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your-api-key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+   REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+   REACT_APP_FIREBASE_APP_ID=your-app-id
+   ```
+5. Start the development server:
+   ```sh
+   npm start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
+To deploy the application to Firebase Hosting:
+```sh
+firebase deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribution
+If you’d like to contribute:
+1. Fork the repository.
+2. Create a new branch (`feature-branch`)
+3. Commit your changes.
+4. Push to the branch and submit a pull request.
